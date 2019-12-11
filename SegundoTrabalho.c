@@ -69,7 +69,8 @@ void *Leitora(void *arg){
     char id_str[10];
     char nome_arq[50];
     int id = *((int*)arg);
-    itoa(id, id_str, 10);
+    int k = snprintf(id_str, 10, "%d", id);
+    //itoa(id, id_str, 10);
     strcpy(nome_arq, id_str);
     strcat(nome_arq, ".txt");
     FILE *arquivo;
